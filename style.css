@@ -80,6 +80,23 @@ svg {
     font-size: .82rem;
 }
 
+.menu-toggle {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+}
+
+.menu-toggle span {
+    background: var(--ink);
+    display: block;
+    height: 2px;
+    width: 22px;
+}
+
 .main-nav a:hover,
 .header-whatsapp:hover {
     color: var(--green);
@@ -624,8 +641,41 @@ footer {
 }
 
 @media (max-width:900px) {
-    .main-nav a:nth-child(n+3) {
+    .menu-toggle {
+        display: flex;
+        margin-left: auto;
+        margin-right: 10px;
+    }
+
+    .main-nav {
+        background: #fffafa;
+        border-bottom: 1px solid #efd5d8;
+        box-shadow: 0 8px 18px #6f3e4b18;
         display: none;
+        flex-direction: column;
+        gap: 0;
+        left: 0;
+        padding: 8px 22px 12px;
+        position: absolute;
+        right: 0;
+        top: 100%;
+    }
+
+    .main-nav.is-open {
+        display: flex;
+    }
+
+    .main-nav a {
+        border-bottom: 1px solid #efd5d855;
+        padding: 12px 0;
+    }
+
+    .main-nav a:last-child {
+        border-bottom: 0;
+    }
+
+    .main-nav a:nth-child(n+3) {
+        display: block;
     }
 
     .hero {
